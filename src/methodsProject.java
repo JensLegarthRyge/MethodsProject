@@ -47,7 +47,7 @@ public class methodsProject {
         } else
         return "bugger";
     }
-     */
+    */
 
     //Task 3
     /*
@@ -96,13 +96,63 @@ public class methodsProject {
         double A = Math.sqrt(s*(s-a)*(s-b)*(s-c));
         return A;
     }
-     */
+    */
 
     //Task 5
+    /*
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input your password: ");
+        String userInputPassword = scanner.nextLine();
 
+        System.out.println(passwordVerifier(userInputPassword));
     }
-    public static boolean passwordVerifier (String userInput){
 
+    private static boolean passwordVerifier(String userInput) {
+
+        int minLength = 8; //has to be at least 8 digits
+        int passwordLength = userInput.length();
+
+        userInput.contains("secret"); //cannot contain secret
+        userInput.charAt(0); //cannot have '-' as first digit (Really becomes obsolete with step 2. but let's keep it for good riddance
+
+        if (passwordLength >= minLength && !userInput.contains("secret")
+                && userInput.charAt(0) != '-' && checkForSymbols(userInput)) {
+            return true;
+        } else
+            return false;
     }
+
+    private static boolean checkForSymbols(String userInput) {
+        int userInputLength = userInput.length();
+
+        for (int i = 0; i < userInputLength; i++) {
+            char ch = userInput.charAt(i);
+            if (!Character.isLetterOrDigit(ch)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    */
+
+    //Task 6
+    /*
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input amount of numbers you would like to print: ");
+        while (!scanner.hasNextInt()){
+            System.out.println("Invalid input, please input a number:");
+            scanner.nextLine();
+        }
+        int amountToPrint = scanner.nextInt();
+        printNumbers(amountToPrint);
+    }
+    private static void printNumbers (int amount){
+        int amountToPrint = amount + 1;
+        for (int i = 1; i < amountToPrint; i++) {
+            System.out.printf("["+i+"]");
+        }
+    }
+    */
 }
